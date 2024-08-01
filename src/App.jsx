@@ -1,7 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import axios from 'axios';
+import { useState, useEffect } from 'react'
 
 function App() {
+
+  const Url = "http://localhost:3000/produto"
 
   const [id, setId] = useState('');
   const [produto, setProduto] = useState('');
@@ -11,6 +14,13 @@ function App() {
 
   const [classInserir, setClassInserir] = useState('btn btb-outline');
   const [classAlterar, setClassAlterar] = useState('Sumir');
+  const [data, satData] = useState([]);
+
+  useEffect(() =>{
+    axios.get(url)
+       .then( res => setData(res.data))
+  }, [data, satData])
+
 
   const cadastrar = (e) => {
     e.preventDefault()
@@ -92,13 +102,16 @@ function App() {
       
     </thead>
       <tbody>
+        {data.map(( item ) => ())}
       <tr>
         <th scope='row'>#</th>
         <th>nome do produto</th>
         <th>Valor</th>
         <th>Qtd</th>
         <th>
-          <img width={40} src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
+          <img 
+          width={40} 
+          src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
         </th>
         <div className='btn-goup d-flex gap-1'>
           <button className="btn btn-outline-warning">
