@@ -29,7 +29,7 @@ function App() {
   }
   return (
    <div className="container">
-   <h1 className="mt-3 mb-3">cadastro de Produto</h1>
+   <h1 className="mt-5 mb-5 text-center">adastro de Produto</h1>
 
    <form onSubmit={cadastrar}>
       <div className="row mb-3">
@@ -37,7 +37,7 @@ function App() {
           <input
             type="text"
             value={produto}
-            className="form-control"
+            className="form-control mb-4"
             placeholder="Nome do Produto"
             onChange={(e) => setProduto(e.target.value)}
             />
@@ -168,11 +168,7 @@ function App() {
           <i className="fa-solid fa-trash"></i>
           </button>
         </div>
-        <th>
-
-        </th>
       </tr>
-      
       </tbody>
       
    </table>

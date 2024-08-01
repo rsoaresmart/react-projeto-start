@@ -10,5 +10,8 @@
 * Bootstrap
    Classes que ja vem configuradas
 
-*Axios
+* Axios
    Get, post, put, delete
+
+* rodar o projeto
+   npm run dev
