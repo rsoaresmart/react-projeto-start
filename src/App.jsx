@@ -1,7 +1,6 @@
 import './App.css';
 import axios from 'axios';
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect } from 'react';
 function App() {
 
   const Url = "http://localhost:3000/produto"
@@ -39,11 +38,11 @@ function App() {
   }
   return (
    <div className="container">
-   <h1 className="mt-5 mb-5 text-center">adastro de Produto</h1>
+   <h1 className="mt-5 mb-5 text-center">Cadastro de Produto</h1>
 
-   <form onSubmit={cadastrar}>
+   <form onSubmit={"cadastrar..."}>
       <div className="row mb-3">
-      <div clasNsame="col">
+      <div classNsame="col">
           <input
             type="text"
             value={produto}
@@ -54,7 +53,7 @@ function App() {
          </div>
          <div className="col">
           <input
-            type="texte"
+            type="text"
             value={valor}
             placeholder="Valor"
             className="form-control"
@@ -63,7 +62,7 @@ function App() {
          </div>
          <div className="col">
           <input
-            type="texte"
+            type="text"
             value={quantidade}
             placeholder="Quantidade2"
             className="form-control"
@@ -72,7 +71,7 @@ function App() {
          </div>
          <div className="col">
           <input
-            type="texte"
+            type="text"
             value={foto}
             placeholder="Url da imagem"
             className="form-control"
@@ -104,11 +103,11 @@ function App() {
       <tbody>
         {data.map(( item ) => ())}
       <tr>
-        <th scope='row'>#</th>
-        <th>nome do produto</th>
-        <th>Valor</th>
-        <th>Qtd</th>
-        <th>
+        <th scope='row'>1</th>
+        <td>nome do produto</td>
+        <td>Valor</td>
+        <td>Qtd</td>
+        <td>
           <img 
           width={40} 
           src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
@@ -170,6 +169,7 @@ function App() {
         <th>nome do produto</th>
         <th>Valor</th>
         <th>Qtd</th>
+
         <th>
           <img width={40} src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
         </th>
@@ -177,7 +177,8 @@ function App() {
           <button className="btn btn-outline-warning">
           <i className="fa-solid fa-pen-to-square"></i>
           </button>
-          <button className='btn btn-outline-danger'>
+          <button 
+          className='btn btn-outline-danger'>
           <i className="fa-solid fa-trash"></i>
           </button>
         </div>

@@ -15,3 +15,8 @@
 
 * rodar o projeto
    npm run dev
+
+#### Git
+* git add .
+* git commit -m "atualizei o projeto"
+* git push
