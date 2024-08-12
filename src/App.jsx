@@ -1,9 +1,10 @@
 import './App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+
 function App() {
 
-  const Url = "http://localhost:3000/produto"
+  const url = "http://localhost:3000/produto"
 
   const [id, setId] = useState('');
   const [produto, setProduto] = useState('');
@@ -12,14 +13,13 @@ function App() {
   const [foto, setFoto] = useState('');
 
   const [classInserir, setClassInserir] = useState('btn btb-outline');
-  const [classAlterar, setClassAlterar] = useState('Sumir');
-  const [data, satData] = useState([]);
+  const [classAlterar, setClassAlterar] = useState('btn btb-outline sumir');
+  const [data, setData] = useState([]); // guarda muitas informações
 
-  useEffect(() =>{
+  useEffect(() => {
     axios.get(url)
-       .then( res => setData(res.data))
-  }, [data, satData])
-
+         .then( res => setData( res.data ))
+  }, [data, setData])
 
   const cadastrar = (e) => {
     e.preventDefault()
@@ -32,13 +32,13 @@ function App() {
       alert ("Por favor preencha o campo quantidade do produto")
     }else if(foto ===""){
       alert("Por favor preencha o campo foto do produto")
-    }else{
+    }else if(sucesso ===""){
       alert("Produto cadastrado com sucesso!")
     }
   }
   return (
    <div className="container">
-   <h1 className="mt-5 mb-5 text-center">Cadastro de Produto</h1>
+   <h1 className="mt-5 mb-5 text-center"> Cadastro de Produto </h1>
 
    <form onSubmit={"cadastrar..."}>
       <div className="row mb-3">
@@ -64,7 +64,7 @@ function App() {
           <input
             type="text"
             value={quantidade}
-            placeholder="Quantidade2"
+            placeholder="Quantidade"
             className="form-control"
             onChange={(e) => setQuantidade(e.target.value)}
             />
@@ -83,12 +83,13 @@ function App() {
       <div className="row mb-3">
       </div>
       <div className="btn-group d-flex gap-3">
-      <button tapeclassName={`btn btn-outline-success ${classInserir}`}>inserir</button>
+      <button className={`btn btn-outline-success ${classInserir}`}>inserir</button>
       <button className={`btn btn-outline-primary ${classAlterar}`}>Salvar</button>
       </div>
    </form>
 
    <table className='table table'>
+    
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -98,93 +99,34 @@ function App() {
         <th scope="col">imagem</th>
         <th scope="col" className='text-center'>Ações</th>
       </tr>
-      
     </thead>
-      <tbody>
-        {data.map(( item ) => ())}
-      <tr>
-        <th scope='row'>1</th>
-        <td>nome do produto</td>
-        <td>Valor</td>
-        <td>Qtd</td>
-        <td>
-          <img 
-          width={40} 
-          src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
-        </th>
-        <div className='btn-goup d-flex gap-1'>
-          <button className="btn btn-outline-warning">
-          <i className="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button className='btn btn-outline-danger'>
-          <i className="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <th>
-
-        </th>
-      </tr>
-      <tr>
-        <th scope='row'>#</th>
-        <th>nome do produto</th>
-        <th>Valor</th>
-        <th>Qtd</th>
-        <th>
-          <img width={40} src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
-        </th>
-        <div className='btn-goup d-flex gap-1'>
-          <button className="btn btn-outline-warning">
-          <i className="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button className='btn btn-outline-danger'>
-          <i className="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <th>
-
-        </th>
-      </tr>
-      <tr>
-        <th scope='row'>#</th>
-        <th>nome do produto</th>
-        <th>Valor</th>
-        <th>Qtd</th>
-        <th>
-          <img width={40} src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
-        </th>
-        <div className='btn-goup d-flex gap-1'>
-          <button className="btn btn-outline-warning">
-          <i className="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button className='btn btn-outline-danger'>
-          <i className="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <th>
-
-        </th>
-      </tr>
-      <tr>
-        <th scope='row'>#</th>
-        <th>nome do produto</th>
-        <th>Valor</th>
-        <th>Qtd</th>
-
-        <th>
-          <img width={40} src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75" alt="imagem do produto" />
-        </th>
-        <div className='btn-goup d-flex gap-1'>
-          <button className="btn btn-outline-warning">
-          <i className="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button 
-          className='btn btn-outline-danger'>
-          <i className="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </tr>
-      </tbody>
+    
+    <tbody>
+      { data.map(( item ) => (
+        <tr>
+          <th scope='row'>1</th>
+          <td> { item.nome } </td>
+          <td>Valor</td>
+          <td>Qtd</td>
+          <td>
+            <img width={40} 
+              src="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75"
+              alt="imagem do produto"
+            />
+          </td>
+          <div className="btn-goup d-flex gap-1">
+            <button className="btn btn-outline-warning">
+            <i className="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button className='btn btn-outline-danger'>
+            <i className="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </tr>
+      ))}
       
+    </tbody>
+
    </table>
 
    </div>

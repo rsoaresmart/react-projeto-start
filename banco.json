@@ -1,10 +1,11 @@
 {
 "produto":[
-   {"id": 1, 
-     "produto": "kit teclado",
-      "valor": "R$200,00",
-      "quantidade": 20,
-      "foto": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSLhMInRMoa5GKY3RX_vqr1omAPV6FGFDB_ikwZmX_UDRiug5wOAgYtWWDiDO67kl4q4N0Cylb4jY4KQbUD7y1vhsV_EdSRKFJ_BBjz4aemAqrLWgKbdnjT"
+   {
+    "id": 1, 
+    "produto": "kit teclado",
+    "valor": "R$ 200,00",
+    "quantidade": 20,
+    "foto": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSLhMInRMoa5GKY3RX_vqr1omAPV6FGFDB_ikwZmX_UDRiug5wOAgYtWWDiDO67kl4q4N0Cylb4jY4KQbUD7y1vhsV_EdSRKFJ_BBjz4aemAqrLWgKbdnjT"
     },
     {
      "id": 2, 
@@ -13,5 +14,8 @@
       "quantidade": 11,
       "foto": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F537359%2Fnotebook-acer-intel-core-i5-12450h-8gb-ram-ssd-256gb-15-6-full-hd-linux-cinza-a515-57-51w5_1713968348_m.jpg&w=256&q=75"
       }
-    ]
+    ],
+  "categoria" : [
+
+  ]
 }
