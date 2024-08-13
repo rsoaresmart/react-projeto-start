@@ -1,7 +1,6 @@
 import './App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
 function App() {
 
   const url = "http://localhost:3000/produto"
@@ -13,8 +12,8 @@ function App() {
   const [foto, setFoto] = useState('');
 
   const [classInserir, setClassInserir] = useState('btn btb-outline');
-  const [classAlterar, setClassAlterar] = useState('btn btb-outline sumir');
-  const [data, setData] = useState([]); // guarda muitas informações
+  const [classAlterar, setClassAlterar] = useState('btn btb-outline');
+  const [data, setData] = useState([]); 
 
   useEffect(() => {
     axios.get(url)
@@ -37,12 +36,12 @@ function App() {
     }
   }
   return (
-   <div className="container">
+   <div className='container'>
    <h1 className="mt-5 mb-5 text-center"> Cadastro de Produto </h1>
 
-   <form onSubmit={"cadastrar..."}>
+   <form onSubmit={cadastrar}>
       <div className="row mb-3">
-      <div classNsame="col">
+      <div className="row">
           <input
             type="text"
             value={produto}
@@ -73,7 +72,7 @@ function App() {
           <input
             type="text"
             value={foto}
-            placeholder="Url da imagem"
+            placeholder="url da imagem"
             className="form-control"
             onChange={(e) => setFoto(e.target.value)}
             />
@@ -116,10 +115,10 @@ function App() {
           </td>
           <div className="btn-goup d-flex gap-1">
             <button className="btn btn-outline-warning">
-            <i className="fa-solid fa-pen-to-square"></i>
+              <i className="fa-solid fa-pen-to-square"></i>
             </button>
             <button className='btn btn-outline-danger'>
-            <i className="fa-solid fa-trash"></i>
+              <i className="fa-solid fa-trash"></i>
             </button>
           </div>
         </tr>
